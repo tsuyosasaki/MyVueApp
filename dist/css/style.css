@@ -38,4 +38,10 @@ body {
   color: #08c;
 }
 
+#app .info {
+  color: #bbb;
+  font-size: 12px;
+  font-weight: normal;
+}
+
 /*# sourceMappingURL=style.css.map */
