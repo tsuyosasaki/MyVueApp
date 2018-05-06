@@ -14,6 +14,10 @@ body {
   padding: 16px 0;
 }
 
+#app h1 > button {
+  float: right;
+}
+
 #app ul {
   padding: 0;
   list-style: none;
