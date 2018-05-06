@@ -14,12 +14,28 @@ body {
   padding: 16px 0;
 }
 
+#app ul {
+  padding: 0;
+  list-style: none;
+}
+
 #app li {
   line-height: 1.5;
 }
 
+#app li > span.done {
+  text-decoration: line-through;
+  color: #bbb;
+}
+
 #app input[type="text"] {
   padding: 2px;
+}
+
+#app .command {
+  font-size: 12px;
+  cursor: pointer;
+  color: #08c;
 }
 
 /*# sourceMappingURL=style.css.map */
