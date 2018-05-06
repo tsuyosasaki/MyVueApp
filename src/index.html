@@ -11,13 +11,11 @@
   <div id="app" class="container">
     <h1>My Todos</h1>
     <ul>
-      <!-- <li>{{ todos[0] }}</li>
-      <li>{{ todos[1] }}</li>
-      <li>{{ todos[2] }}</li> -->
       <li v-for="todo in todos">{{ todo }}</li>
     </ul>
-    <form>
-      <input type="text">
+    <!-- <form v-on:submit="addItem"> -->
+    <form @submit.prevent="addItem">
+      <input type="text" v-model="newItem">
       <input type="submit" value="Add">
     </form>
   </div>
