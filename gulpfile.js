@@ -17,7 +17,7 @@ const dev = {
   'img': devDir + '**/*.{jpg,png,gif}',
   // 'img': [devDir + '**/*.jpg',devDir + '**/*.png'],
   'javascript': devDir + '**/*.js',
-  'scss': devDir + '**/*.scss'
+  'sass': devDir + '**/*.{scss,sass}'
 }
 
 //リリース用ディレクトリ
@@ -45,9 +45,9 @@ gulp.task('javascript', function() {
         .pipe(gulp.dest(dest.javascript));
 });
 
-//scss
+//sass
 gulp.task('sass', () => {
-  gulp.src(dev.scss)
+  gulp.src(dev.sass)
   .pipe(sourcemaps.init()) //map生成
   .pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
   .pipe(sass({
@@ -77,7 +77,7 @@ gulp.task('browser-sync', () => {
 gulp.task('default', ['html','img','javascript','sass','browser-sync'], () => {
   gulp.watch( dev.html, ['html']);
   gulp.watch( dev.img, ['img']);
-  gulp.watch( dev.scss, ['sass']);
+  gulp.watch( dev.sass, ['sass']);
   gulp.watch( dev.javascript, ['javascript']);
-  gulp.watch([dev.html, dev.img, dev.javascript, dev.scss ]).on('change', browserSync.reload);
+  gulp.watch([dev.html, dev.img, dev.javascript, dev.sass ]).on('change', browserSync.reload);
 })
