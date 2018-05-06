@@ -5,17 +5,18 @@
     el: '#app',
     data: {
       newItem: '',
-      // todos: [{
-      //   title: 'task 1',
-      //   isDone: false
-      // },{
-      //   title: 'task 2',
-      //   isDone: false
-      // },{
-      //   title: 'task 3',
-      //   isDone: true
-      // }]
       todos: []
+    },
+    watch: {
+      todos: {
+        handler: function() {
+          localStorage.setItem('todos', JSON.stringify(this.todos));
+        },
+        deep: true
+      }
+    },
+    mounted: function() {
+      this.todos = JSON.parse(localStorage.getItem('todos')) || [];
     },
     methods: {
       addItem: function(e) {
@@ -35,18 +36,11 @@
         if(!confirm('delete finished?')){
           return;
         }
-        // this.todos = this.todos.filter(function(todo) {
-        //   return !todo.isDone;
-        // });
         this.todos = this.remaining;
       }
     },
     computed: {
       remaining: function() {
-        // var items = this.todos.filter(function(todo) {
-        //   return !todo.isDone;
-        // });
-        // return items.length;
         return this.todos.filter(function(todo) {
           return !todo.isDone;
         });
