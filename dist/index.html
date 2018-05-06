@@ -28,7 +28,16 @@
     </form>
   </div>
 
+  <div id="like">
+    <p>Total Likes: {{ total }}</p>
+    <like-component message="Like" @increment="incrementTotal"></like-component>
+    <like-component message="Awesome" @increment="incrementTotal"></like-component>
+    <like-component message="Great" @increment="incrementTotal"></like-component>
+    <like-component @increment="incrementTotal"></like-component>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <script src="js/main.js"></script>
+  <script src="js/like.js"></script>
 </body>
 </html>

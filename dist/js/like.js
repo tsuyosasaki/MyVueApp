@@ -3,7 +3,7 @@
 
   // Components
 
-  var likeComponent = Vue.extend({
+  Vue.component('like-component', {
     props: {
       message: {
         type: String,
@@ -26,9 +26,9 @@
 
   var like = new Vue({
     el: '#like',
-    components: {
-      'like-component': likeComponent
-    },
+    // components: {
+    //   'like-component': likeComponent
+    // },
     data: {
       total: 0
     },

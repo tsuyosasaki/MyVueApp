@@ -1,0 +1,24 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": "vue",
+    "parserOptions": {
+        "ecmaVersion": 2017
+    },
+    "rules": {
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "no-constant-condition": 1,
+        "no-var": 2,
+        "prefer-const": 2
+    }
+}
