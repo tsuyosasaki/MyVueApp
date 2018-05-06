@@ -1,0 +1,1 @@
+{"version":3,"sources":["likebtn/css/style.sass"],"names":[],"mappings":"AAAA;EACE,gBAAe;EACf,iCAAgC;CAAG","file":"style.css","sourcesContent":["body {\n  font-size: 16px;\n  font-family: Verdana, sans-serif; }\n"]}
